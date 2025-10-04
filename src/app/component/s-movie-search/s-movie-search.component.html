@@ -110,6 +110,63 @@
     </div>
   </div>
 
+  <!-- Movie Suggestions Sections -->
+  <div
+    *ngIf="!movies && !isLoading && !moviesNotFound"
+    class="com-max-w-7xl com-mx-auto com-px-4 sm:com-px-6 lg:com-px-8 com-py-12"
+  >
+    <!-- Trending Now -->
+    <section class="movie-section com-mb-12">
+      <h2
+        class="com-text-3xl com-font-display com-font-bold com-text-dark-900 dark:com-text-dark-100 com-mb-4"
+      >
+        Trending Now
+      </h2>
+      <div class="horizontal-scroll">
+        <div
+          *ngFor="let movie of trendingMovies; trackBy: trackByMovie"
+          class="movie-card-wrapper"
+        >
+          <app-movie-card [movie]="movie"></app-movie-card>
+        </div>
+      </div>
+    </section>
+
+    <!-- Genre Spotlight -->
+    <section class="movie-section com-mb-12">
+      <h2
+        class="com-text-3xl com-font-display com-font-bold com-text-dark-900 dark:com-text-dark-100 com-mb-4"
+      >
+        Genre Spotlight: Thrillers
+      </h2>
+      <div class="horizontal-scroll">
+        <div
+          *ngFor="let movie of genreSpotlightMovies; trackBy: trackByMovie"
+          class="movie-card-wrapper"
+        >
+          <app-movie-card [movie]="movie"></app-movie-card>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recently Added -->
+    <section class="movie-section com-mb-12">
+      <h2
+        class="com-text-3xl com-font-display com-font-bold com-text-dark-900 dark:com-text-dark-100 com-mb-4"
+      >
+        Recently Added
+      </h2>
+      <div class="horizontal-scroll">
+        <div
+          *ngFor="let movie of recentlyAddedMovies; trackBy: trackByMovie"
+          class="movie-card-wrapper"
+        >
+          <app-movie-card [movie]="movie"></app-movie-card>
+        </div>
+      </div>
+    </section>
+  </div>
+
   <!-- Loading Animation -->
   <div
     *ngIf="isLoading"

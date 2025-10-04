@@ -27,6 +27,8 @@ export class SMovieSearchComponent implements OnInit {
     "Adventure",
   ];
   trendingMovies: IMovie[] = [];
+  genreSpotlightMovies: IMovie[] = [];
+  recentlyAddedMovies: IMovie[] = [];
 
   constructor(private movieService: MovieService, private router: Router) {
     this.inputForm = new FormGroup({

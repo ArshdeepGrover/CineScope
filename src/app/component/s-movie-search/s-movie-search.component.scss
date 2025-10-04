@@ -17,3 +17,28 @@
 .card {
   @apply com-flex com-flex-wrap com-justify-around com-my-6;
 }
+
+.horizontal-scroll {
+  display: flex;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+  gap: 1rem;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.movie-card-wrapper {
+  flex: 0 0 auto;
+  width: 200px; /* Adjust width as needed */
+}
+
+/* Optional: Hide scrollbar for WebKit browsers */
+.horizontal-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* Optional: Hide scrollbar for Firefox */
+.horizontal-scroll {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
